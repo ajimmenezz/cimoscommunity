@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CIMOS_Community"
+             x:Class="CIMOS_Community.MainPage"
+             BackgroundImage="bg1.png">
+    <StackLayout>
+        <Image
+            Margin="0,50,0,0"
+            Source="cimos_logo">
+            
+        </Image>
+        <Label
+            HorizontalOptions="Center"
+            TextColor="Black"
+            Text="Community"></Label>
+        <StackLayout
+            BackgroundColor="White"
+            Opacity="0.85"
+            VerticalOptions="EndAndExpand">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HeightRequest="24"
+                    HorizontalOptions="End"
+                    Source="personas"
+                    VerticalOptions="Center"
+                    WidthRequest="24">
+                </Image>
+                <Entry
+                    Grid.Row="0"
+                    Grid.Column="1"                    
+                    Placeholder="Nombre de Usuario">
+                </Entry>
+                <Image
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    HeightRequest="24"
+                    HorizontalOptions="End"
+                    Source="key"
+                    VerticalOptions="Center"
+                    WidthRequest="24">
+                </Image>
+                <Entry    
+                Grid.Row="1"
+                Grid.Column="1"
+                IsPassword="True"                
+                Placeholder="Contraseña">
+            </Entry>
+            </Grid>
+            <Button                
+                BackgroundColor="DarkRed"
+                FontSize="Small"
+                Margin="15,5,15,3"
+                Opacity="1.15"
+                Text="Iniciar Sesión"                
+                TextColor="White"
+                >
+            </Button>
+            <Button                
+                BackgroundColor="DarkGray"
+                FontSize="Small"
+                Margin="15,0"
+                Opacity="1.0"
+                Text="¿Olvidaste tu Contraseña?"                
+                TextColor="Black"
+                >
+            </Button>
+            <Button                
+                BackgroundColor="#42474B"
+                FontSize="Small"
+                Margin="15,20,15,10"
+                Text="Nuevo Usuario"                
+                TextColor="White"
+                >
+            </Button>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
