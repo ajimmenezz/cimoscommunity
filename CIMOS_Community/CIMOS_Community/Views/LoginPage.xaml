@@ -1,99 +1,110 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CIMOS_Community.Views.LoginPage"
-             BackgroundImage="bg1.png"
+             x:Class="CIMOS_Community.Views.LoginPage"             
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              NavigationPage.HasNavigationBar="False"
              Title="Cimos Community">
-    <ContentPage.Content>
-        <StackLayout BindingContext="{Binding Login}">
-            <Image
-                Margin="0,50,0,0"
-                Source="cimos_logo">
 
-            </Image>
-            <Label
-                HorizontalOptions="Center"
-                TextColor="Black"
-                Text="Community"></Label>
-            <ActivityIndicator
-                IsRunning="{Binding IsRunning, Mode=TwoWay}"
-                VerticalOptions="CenterAndExpand">
-            </ActivityIndicator>
-            <StackLayout
-                BackgroundColor="White"
-                Opacity="0.85"
-                VerticalOptions="EndAndExpand">
-                
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width=".1*"></ColumnDefinition>
-                        <ColumnDefinition Width="1*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Image
-                        Grid.Row="0"
-                        Grid.Column="0"
-                        HeightRequest="24"
-                        HorizontalOptions="End"
-                        Source="personas"
-                        VerticalOptions="Center"
-                        WidthRequest="24">
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="FillAndExpand">
+        <Image 
+            AbsoluteLayout.LayoutFlags="All" 
+            AbsoluteLayout.LayoutBounds="0,0,1,1" 
+            Aspect="AspectFill"
+            Source="bg1.png" />
+
+        <ScrollView AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <StackLayout BindingContext="{Binding Login}">
+                <Image
+                    Margin="0,70,0,0"
+                    Source="cimos_logo">
+
                     </Image>
-                    <Entry
-                        Grid.Row="0"
-                        Grid.Column="1"    
-                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                        Placeholder="Nombre de Usuario"
-                        Text="{Binding Email, Mode=TwoWay}">
-                    </Entry>
-                    <Image
-                        Grid.Row="1"
-                        Grid.Column="0"
-                        HeightRequest="24"
-                        HorizontalOptions="End"
-                        Source="key"
-                        VerticalOptions="Center"
-                        WidthRequest="24">
-                    </Image>
-                    <Entry    
-                        Grid.Row="1"
-                        Grid.Column="1"
-                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                        IsPassword="True"                
-                        Placeholder="Contraseña"
-                        Text="{Binding Password, Mode=TwoWay}">
-                    </Entry>
-                </Grid>
-                <Button                
-                    BackgroundColor="DarkRed"
-                    Command="{Binding LoginCommand}"
-                    FontSize="Small"
-                    IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                    Margin="15,5,15,3"                    
-                    Text="Iniciar Sesión"                
-                    TextColor="White"
-                >
-                </Button>
-                <Button                
-                    BackgroundColor="DarkGray"
-                    FontSize="Small"
-                    IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                    Margin="15,0"                    
-                    Text="¿Olvidaste tu Contraseña?"                
+                    <Label
+                    HorizontalOptions="Center"
                     TextColor="Black"
-                >
-                </Button>
-                <Button                
-                    BackgroundColor="#42474B"
-                    FontSize="Small"
-                    IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                    Margin="15,20,15,10"
-                    Text="Nuevo Usuario"                
-                    TextColor="White"
-                >
-                </Button>
+                    Text="Community"></Label>
+                    <ActivityIndicator
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}"
+                    VerticalOptions="CenterAndExpand">
+                    </ActivityIndicator>
+                    <StackLayout
+                        BackgroundColor="White"
+                        Opacity="0.85"
+                        VerticalOptions="EndAndExpand">
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Image
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                HeightRequest="24"
+                                HorizontalOptions="End"
+                                Source="personas"
+                                VerticalOptions="Center"
+                                WidthRequest="24">
+                                </Image>
+                                <Entry
+                                Grid.Row="0"
+                                Grid.Column="1"    
+                                IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                                Placeholder="Nombre de Usuario"
+                                Text="{Binding Email, Mode=TwoWay}">
+                                </Entry>
+                                <Image
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                HeightRequest="24"
+                                HorizontalOptions="End"
+                                Source="key"
+                                VerticalOptions="Center"
+                                WidthRequest="24">
+                                </Image>
+                                <Entry    
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                                IsPassword="True"                
+                                Placeholder="Contraseña"
+                                Text="{Binding Password, Mode=TwoWay}">
+                                </Entry>
+                            </Grid>
+                            <Button                
+                            BackgroundColor="DarkRed"
+                            Command="{Binding LoginCommand}"
+                            FontSize="Small"
+                            IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                            Margin="15,5,15,3"                    
+                            Text="Iniciar Sesión"                
+                            TextColor="White"
+                        >
+                            </Button>
+                            <Button                
+                            BackgroundColor="DarkGray"
+                            FontSize="Small"
+                            IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                            Margin="15,0"                    
+                            Text="¿Olvidaste tu Contraseña?"                
+                            TextColor="Black"
+                        >
+                            </Button>
+                            <Button                
+                            BackgroundColor="#42474B"
+                            FontSize="Small"
+                            IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                            Margin="15,20,15,10"
+                            Text="Nuevo Usuario"                
+                            TextColor="White"
+                        >
+                    </Button>
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
-    </ContentPage.Content>
+        </ScrollView>
+
+    </AbsoluteLayout>
 </ContentPage>
